@@ -1,0 +1,14 @@
+//@author breakingehabit
+
+//@version=4
+
+study(shorttitle = 'MA', title = 'MA by breakingehabit')
+
+length = input(title = 'Length', type = input.integer, defval = 100, minval = 0)
+src = input(title = 'Source', type = input.source, defval = close)
+ma = ema(src,length)
+
+trend = (open + close) / 2 - ma
+
+plot(trend, title = 'Trend')
+
